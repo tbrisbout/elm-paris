@@ -1,9 +1,11 @@
 module Main exposing (..)
 
-import Html exposing (Html, header, footer, h1, h2, h3, h4, div, p, a, br, li)
-import Html.Attributes exposing (style, class)
+import Html exposing (Html, node, header, footer, h1, h2, h3, h4, div, p, a, br, li)
+import Html.Attributes exposing (style, class, href, attribute)
 import Html.App as App
 import Css exposing (..)
+import FontAwesome.Web as Icon
+import FontAwesome.Brand as Brand
 import Meetups exposing (Meetup, Talk, nextMeetup, pastMeetups)
 
 
@@ -46,11 +48,13 @@ displayTalk : Talk -> Html Msg
 displayTalk talk =
     div [ cardStyles ]
         [ h3 [ styles [ color talkTitle ] ] [ Html.text talk.title ]
-        , a [ class "speaker", styles [ color speakerLink ] ] [ Html.text talk.speaker ]
+        , a [ class "speaker", styles [ color speakerLink ] ] [ Brand.twitter, Html.text <| " " ++ talk.speaker ]
         , br [] []
-        , p [ style [ "text-align" => "left" ] ]
+        , p [ style [ ( "text-align", "left" ) ] ]
             [ Html.text talk.description
             ]
+        , a [ href talk.link, Html.Attributes.target "_blank" ] [ Icon.desktop, Html.text " Slides" ]
+        , br [] []
         ]
 
 
@@ -79,25 +83,21 @@ previousMeetupsView meetups =
 view : Model -> Html Msg
 view model =
     div [ viewStyles ]
-        [ header [ headerStyles ]
-            [ h1 [ styles [ marginTop (px 0) ] ]
-                [ Html.text "Elm Paris"
+        <| externalStylesheets
+        ++ [ header [ headerStyles ]
+                [ h1 [ styles [ marginTop (px 0) ] ]
+                    [ Html.text "Elm Paris"
+                    ]
+                , h2 [] [ Html.text "Next meetup line-up" ]
+                , nextMeetupView model.nextMeetup
                 ]
-            , h2 [] [ Html.text "Next meetup line-up" ]
-            , nextMeetupView model.nextMeetup
-            ]
-        , h2 [] [ Html.text "Previous talks" ]
-        , previousMeetupsView model.pastMeetups
-        ]
+           , h2 [] [ Html.text "Previous talks" ]
+           , previousMeetupsView model.pastMeetups
+           ]
 
 
 
 -- Styles
-
-
-(=>) : a -> b -> ( a, b )
-(=>) =
-    (,)
 
 
 styles : List Css.Mixin -> Html.Attribute Msg
@@ -137,6 +137,7 @@ viewStyles =
         , margin (px 0)
         , textAlign center
         , fontFamilies [ "Montserrat", "Arial" ]
+        , backgroundColor (hex "#ffggff")
         ]
 
 
@@ -161,6 +162,43 @@ cardStyles =
                 |> Css.asPairs
            )
         |> style
+
+
+
+-- Hack for external stylesheet in reactor
+
+
+loadStylesheet : String -> Html Msg
+loadStylesheet url =
+    let
+        tag =
+            "link"
+
+        attrs =
+            [ attribute "rel" "stylesheet"
+            , attribute "property" "stylesheet"
+            , attribute "href" url
+            ]
+
+        children =
+            []
+    in
+        node tag attrs children
+
+
+fontAwesome : Html Msg
+fontAwesome =
+    loadStylesheet "https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"
+
+
+bootstrap : Html Msg
+bootstrap =
+    loadStylesheet "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+
+
+externalStylesheets : List (Html Msg)
+externalStylesheets =
+    [ fontAwesome, bootstrap ]
 
 
 
