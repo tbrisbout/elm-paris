@@ -1,8 +1,9 @@
 module Main exposing (..)
 
-import Html exposing (Html, header, footer, h1, h2, h3, h4, div, p, a, br, text, li)
+import Html exposing (Html, header, footer, h1, h2, h3, h4, div, p, a, br, li)
 import Html.Attributes exposing (style, class)
 import Html.App as App
+import Css exposing (..)
 import Meetups exposing (Meetup, Talk, nextMeetup, pastMeetups)
 
 
@@ -44,11 +45,11 @@ update msg model =
 displayTalk : Talk -> Html Msg
 displayTalk talk =
     div [ cardStyles ]
-        [ h3 [ style [ "color" => talkTitle ] ] [ text talk.title ]
-        , a [ class "speaker", style [ "color" => speakerLink ] ] [ text talk.speaker ]
+        [ h3 [ styles [ color talkTitle ] ] [ Html.text talk.title ]
+        , a [ class "speaker", styles [ color speakerLink ] ] [ Html.text talk.speaker ]
         , br [] []
         , p [ style [ "text-align" => "left" ] ]
-            [ text talk.description
+            [ Html.text talk.description
             ]
         ]
 
@@ -57,7 +58,7 @@ nextMeetupView : Meetup -> Html Msg
 nextMeetupView meetup =
     div []
         [ h3 []
-            [ text (meetup.date ++ " - " ++ meetup.location)
+            [ Html.text (meetup.date ++ " - " ++ meetup.location)
             ]
         , li [] (List.map displayTalk meetup.lineUp)
         ]
@@ -79,13 +80,13 @@ view : Model -> Html Msg
 view model =
     div [ viewStyles ]
         [ header [ headerStyles ]
-            [ h1 [ style [ "margin-top" => "0" ] ]
-                [ text "Elm Paris"
+            [ h1 [ styles [ marginTop (px 0) ] ]
+                [ Html.text "Elm Paris"
                 ]
-            , h2 [] [ text "Next meetup line-up" ]
+            , h2 [] [ Html.text "Next meetup line-up" ]
             , nextMeetupView model.nextMeetup
             ]
-        , h2 [] [ text "Previous talks" ]
+        , h2 [] [ Html.text "Previous talks" ]
         , previousMeetupsView model.pastMeetups
         ]
 
@@ -99,64 +100,67 @@ view model =
     (,)
 
 
-
--- Colors
-
-
-type alias Color =
-    String
+styles : List Css.Mixin -> Html.Attribute Msg
+styles =
+    Css.asPairs >> style
 
 
 headerBg : Color
 headerBg =
-    "#3ca0b8"
+    hex "#3ca0b8"
+
+
+headerColor : Color
+headerColor =
+    hex "#ffffff"
 
 
 talkTitle : Color
 talkTitle =
-    "#e33e57"
+    hex "#e33e57"
 
 
 eventTitle : Color
 eventTitle =
-    "#7fd13b"
+    hex "#7fd13b"
 
 
 speakerLink : Color
 speakerLink =
-    "#4343ff"
+    hex "#4343ff"
 
 
 viewStyles : Html.Attribute Msg
 viewStyles =
-    style
-        [ "list-style-type" => "none"
-        , "height" => "100%"
-        , "margin" => "0"
-        , "text-align" => "center"
-        , "font-family" => "Montserrat, Arial"
+    styles
+        [ height (pc 100)
+        , margin (px 0)
+        , textAlign center
+        , fontFamilies [ "Montserrat", "Arial" ]
         ]
 
 
 headerStyles : Html.Attribute Msg
 headerStyles =
-    style
-        [ "background-color" => headerBg
-        , "color" => "white"
-        , "padding" => "20px"
+    styles
+        [ backgroundColor headerBg
+        , color headerColor
+        , padding (px 20)
         ]
 
 
 cardStyles : Html.Attribute Msg
 cardStyles =
-    style
-        [ "background-color" => "white"
-        , "color" => "#000000"
-        , "width" => "50%"
-        , "margin" => "0 auto 25px"
-        , "padding" => "10px"
-        , "box-shadow" => "0 35px 37px rgba(0, 0, 0, 0.1)"
-        ]
+    ( "box-shadow", "0 35px 37px rgba(0, 0, 0, 0.1)" )
+        :: ([ backgroundColor (hex "#ffffff")
+            , color (hex "#000000")
+            , width (pc 50)
+            , margin3 (px 0) auto (px 25)
+            , padding (px 10)
+            ]
+                |> Css.asPairs
+           )
+        |> style
 
 
 
