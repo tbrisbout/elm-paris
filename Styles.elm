@@ -69,6 +69,11 @@ cardStyles =
         |> style
 
 
+avatarStyle : Html.Attribute a
+avatarStyle =
+    styles [ borderRadius (pc 50) ]
+
+
 
 -- Hack for external stylesheet in reactor
 

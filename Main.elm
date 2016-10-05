@@ -1,13 +1,14 @@
 module Main exposing (..)
 
-import Html exposing (Html, node, header, footer, h1, h2, h3, h4, div, p, a, br, li)
-import Html.Attributes exposing (style, class, href, attribute)
+import Html exposing (Html, node, header, footer, h1, h2, h3, h4, div, span, p, a, img, br, li)
+import Html.Attributes exposing (style, class, href, attribute, src)
 import Html.App as App
-import Css exposing (..)
+import Css exposing (color, marginTop, px)
 import FontAwesome.Web as Icon
 import FontAwesome.Brand as Brand
 import Meetups exposing (Meetup, Talk, nextMeetup, pastMeetups)
-import Styles exposing (externalStylesheets, viewStyles, headerStyles, cardStyles, styles, talkTitle, speakerLink)
+import Speakers exposing (Speaker)
+import Styles exposing (externalStylesheets, viewStyles, headerStyles, cardStyles, avatarStyle, styles, talkTitle, speakerLink)
 
 
 -- MODEL
@@ -49,7 +50,7 @@ displayTalk : Talk -> Html Msg
 displayTalk talk =
     div [ cardStyles ]
         [ h3 [ styles [ color talkTitle ] ] [ Html.text talk.title ]
-        , a [ class "speaker", styles [ color speakerLink ] ] [ Brand.twitter, Html.text <| " " ++ talk.speaker ]
+        , displaySpeaker talk.speaker
         , br [] []
         , p [ style [ ( "text-align", "left" ) ] ]
             [ Html.text talk.description
@@ -57,6 +58,31 @@ displayTalk talk =
         , a [ href talk.link, Html.Attributes.target "_blank" ] [ Icon.desktop, Html.text " Slides" ]
         , br [] []
         ]
+
+
+displaySpeaker : Speaker -> Html Msg
+displaySpeaker { fullName, twitter } =
+    let
+        attributes =
+            [ class "speaker", styles [ color speakerLink ] ]
+
+        twitterUrl handle =
+            "https://twitter.com/" ++ handle
+
+        twitterPic handle =
+            twitterUrl handle ++ "/profile_image?size=bigger"
+    in
+        case twitter of
+            Just handle ->
+                a ((handle |> twitterUrl |> href) :: attributes)
+                    [ img [ src (twitterPic handle), avatarStyle ] []
+                    , Html.text <| fullName ++ " ( "
+                    , Brand.twitter
+                    , Html.text <| " " ++ handle ++ " )"
+                    ]
+
+            Nothing ->
+                span attributes [ Html.text fullName ]
 
 
 nextMeetupView : Meetup -> Html Msg
