@@ -63,6 +63,8 @@ cardStyles =
             , width (pc 50)
             , margin3 (px 0) auto (px 25)
             , padding (px 10)
+            , displayFlex
+            , alignItems center
             ]
                 |> Css.asPairs
            )
@@ -71,7 +73,16 @@ cardStyles =
 
 avatarStyle : Html.Attribute a
 avatarStyle =
-    styles [ borderRadius (pc 50) ]
+    let
+        avatarSize =
+            px 73
+    in
+        styles
+            [ width avatarSize
+            , height avatarSize
+            , borderRadius (pc 50)
+            , marginBottom (px 5)
+            ]
 
 
 
@@ -96,6 +107,11 @@ loadStylesheet url =
         node tag attrs children
 
 
+normalizeCss : Html a
+normalizeCss =
+    loadStylesheet "https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"
+
+
 fontAwesome : Html a
 fontAwesome =
     loadStylesheet "https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"
@@ -108,4 +124,4 @@ bootstrap =
 
 externalStylesheets : List (Html a)
 externalStylesheets =
-    [ fontAwesome, bootstrap ]
+    [ normalizeCss, fontAwesome, bootstrap ]
