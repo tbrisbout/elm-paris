@@ -55,6 +55,16 @@ headerStyles =
         ]
 
 
+titleStyle : Html.Attribute a
+titleStyle =
+    styles [ marginTop (px 0) ]
+
+
+listStyles : Html.Attribute a
+listStyles =
+    styles [ paddingLeft (px 0) ]
+
+
 cardStyles : Html.Attribute a
 cardStyles =
     ( "box-shadow", "0 35px 37px rgba(0, 0, 0, 0.1)" )

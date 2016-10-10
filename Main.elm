@@ -1,10 +1,9 @@
 module Main exposing (..)
 
-import Html exposing (Html, node, header, footer, h1, h2, h3, h4, div, span, p, a, img, br, ul)
+import Html exposing (..)
 import Html.App as App
-import Css exposing (color, marginTop, paddingLeft, px)
 import Meetups exposing (Meetup, Talk, nextMeetup, pastMeetups)
-import Styles exposing (externalStylesheets, viewStyles, headerStyles, cardStyles, avatarStyle, styles, talkTitle, speakerLink)
+import Styles exposing (..)
 import Card exposing (displayCard)
 
 
@@ -46,17 +45,15 @@ update msg model =
 nextMeetupView : Meetup -> Html Msg
 nextMeetupView meetup =
     div []
-        [ h3 []
-            [ Html.text (meetup.date ++ " - " ++ meetup.location)
-            ]
-        , ul [ styles [ paddingLeft (px 0) ] ]
+        [ h3 [] [ text (meetup.date ++ " - " ++ meetup.location) ]
+        , ul [ listStyles ]
             (List.map displayCard meetup.lineUp)
         ]
 
 
 previousMeetupsView : List Meetup -> Html Msg
 previousMeetupsView meetups =
-    ul [ styles [ paddingLeft (px 0) ] ]
+    ul [ listStyles ]
         (meetups
             |> List.map .lineUp
             |> List.concat
@@ -71,13 +68,11 @@ view model =
     div [ viewStyles ]
         <| externalStylesheets
         ++ [ header [ headerStyles ]
-                [ h1 [ styles [ marginTop (px 0) ] ]
-                    [ Html.text "Elm Paris"
-                    ]
-                , h2 [] [ Html.text "Next meetup line-up" ]
+                [ h1 [ titleStyle ] [ text "Elm Paris" ]
+                , h2 [] [ text "Next meetup" ]
                 , nextMeetupView model.nextMeetup
                 ]
-           , h2 [] [ Html.text "Previous talks" ]
+           , h2 [] [ text "Previous talks" ]
            , previousMeetupsView model.pastMeetups
            ]
 
