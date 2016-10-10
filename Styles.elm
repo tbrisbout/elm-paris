@@ -57,7 +57,11 @@ headerStyles =
 
 titleStyle : Html.Attribute a
 titleStyle =
-    styles [ marginTop (px 0) ]
+    styles
+        [ marginTop (px 0)
+        , paddingBottom (px 10)
+        , fontFamilies [ "Monospace", "Arial" ]
+        ]
 
 
 listStyles : Html.Attribute a

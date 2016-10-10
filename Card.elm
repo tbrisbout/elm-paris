@@ -68,11 +68,23 @@ displayTalkInfo { title, description, link } =
             , flex (pc 75)
             ]
         ]
-        [ h3 [ styles [ color talkTitle ] ] [ text title ]
-        , br [] []
-        , p [ styles [ textAlign left ] ]
+        ([ h3 [ styles [ color talkTitle ] ] [ text title ]
+         , br [] []
+         , p [ styles [ textAlign left ] ]
             [ text description
             ]
-        , a [ href link, target "_blank" ] [ Icon.desktop, text " Slides" ]
-        , br [] []
-        ]
+         ]
+            ++ (displaySlides link)
+        )
+
+
+displaySlides : Maybe String -> List (Html a)
+displaySlides link =
+    case link of
+        Just link' ->
+            [ a [ href link', target "_blank" ] [ Icon.desktop, text " Slides" ]
+            , br [] []
+            ]
+
+        Nothing ->
+            []

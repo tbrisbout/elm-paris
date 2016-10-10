@@ -45,7 +45,7 @@ update msg model =
 nextMeetupView : Meetup -> Html Msg
 nextMeetupView meetup =
     div []
-        [ h3 [] [ text (meetup.date ++ " - " ++ meetup.location) ]
+        [ h2 [ titleStyle ] [ text <| "nextMeetup = (" ++ meetup.date ++ ", " ++ meetup.location ++ ")" ]
         , ul [ listStyles ]
             (List.map displayCard meetup.lineUp)
         ]
@@ -68,8 +68,7 @@ view model =
     div [ viewStyles ]
         <| externalStylesheets
         ++ [ header [ headerStyles ]
-                [ h1 [ titleStyle ] [ text "Elm Paris" ]
-                , h2 [] [ text "Next meetup" ]
+                [ h1 [ titleStyle ] [ text "Elm Paris Meetup" ]
                 , nextMeetupView model.nextMeetup
                 ]
            , h2 [] [ text "Previous talks" ]
