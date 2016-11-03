@@ -34,7 +34,7 @@ displaySpeaker { fullName, profileUrl } =
             "https://twitter.com/" ++ handle
 
         dummyAvatar =
-            img [ src "/images/elm-lang.png", avatarStyle ] []
+            img [ src "https://avatars0.githubusercontent.com/u/4359353?v=3&s=200", avatarStyle ] []
 
         displayAvatar stuff =
             case stuff of
