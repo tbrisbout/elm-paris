@@ -3,61 +3,73 @@ module Speakers exposing (..)
 
 type alias Speaker =
     { fullName : String
-    , twitter : Maybe String
+    , profileUrl : Maybe Profile
     }
+
+
+type Profile
+    = Twitter String
+    | LinkedIn String
 
 
 tbrisbout : Speaker
 tbrisbout =
     { fullName = "Thomas Brisbout"
-    , twitter = Just "tbrisbout"
+    , profileUrl = Just <| Twitter "tbrisbout"
     }
 
 
 jumichot : Speaker
 jumichot =
     { fullName = "Julien Michot"
-    , twitter = Just "jumichot"
+    , profileUrl = Just <| Twitter "jumichot"
     }
 
 
 klebrun : Speaker
 klebrun =
     { fullName = "Kevin Le Brun"
-    , twitter = Nothing
+    , profileUrl = Just <| LinkedIn "https://www.linkedin.com/in/kevinlebrun"
     }
 
 
 abaumann : Speaker
 abaumann =
     { fullName = "Adrien Baumann"
-    , twitter = Nothing
+    , profileUrl = Just <| LinkedIn "https://fr.linkedin.com/in/adrien-baumann-7244694/fr"
     }
 
 
 alickonrails : Speaker
 alickonrails =
     { fullName = "Alick Paul"
-    , twitter = Just "alickonrails"
+    , profileUrl = Just <| Twitter "alickonrails"
     }
 
 
 tellijo : Speaker
 tellijo =
     { fullName = "Joel Matëlli"
-    , twitter = Just "telllijo"
+    , profileUrl = Just <| Twitter "telllijo"
     }
 
 
 n_umiastowski : Speaker
 n_umiastowski =
     { fullName = "Nicolas Umiastowski"
-    , twitter = Just "n_umiastowski"
+    , profileUrl = Just <| Twitter "n_umiastowski"
     }
 
 
 tibastral : Speaker
 tibastral =
     { fullName = "Thibault Assus"
-    , twitter = Just "tibastral"
+    , profileUrl = Just <| Twitter "tibastral"
+    }
+
+
+erwan : Speaker
+erwan =
+    { fullName = "Erwan Queffélec"
+    , profileUrl = Nothing
     }
