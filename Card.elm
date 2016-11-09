@@ -8,6 +8,7 @@ import FontAwesome.Web as Icon
 import FontAwesome.Brand as Brand
 import Speakers exposing (Speaker, Profile(Twitter, LinkedIn))
 import Styles exposing (..)
+import String
 
 
 displayCard : Talk -> Html a
@@ -81,8 +82,11 @@ displayTalkInfo { title, description, slidesUrl, videoUrl } =
         [ h3 [ styles [ color talkTitle ] ] [ text title ]
         , br [] []
         , p [ styles [ textAlign left ] ]
-            [ text description
-            ]
+            (description
+                |> String.lines
+                |> List.map text
+                |> List.intersperse (br [] [])
+            )
         , displaySlides slidesUrl
         , displayVideo videoUrl
         , br [] []

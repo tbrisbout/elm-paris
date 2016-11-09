@@ -12852,7 +12852,6 @@ var _rtfeldman$elm_css$Css$IntentionallyUnsupportedPleaseSeeDocs = {ctor: 'Inten
 var _rtfeldman$elm_css$Css$thin = _rtfeldman$elm_css$Css$IntentionallyUnsupportedPleaseSeeDocs;
 var _rtfeldman$elm_css$Css$thick = _rtfeldman$elm_css$Css$IntentionallyUnsupportedPleaseSeeDocs;
 var _rtfeldman$elm_css$Css$blink = _rtfeldman$elm_css$Css$IntentionallyUnsupportedPleaseSeeDocs;
-var _user$project$Speakers$erwan = {fullName: 'Erwan Queffélec', profileUrl: _elm_lang$core$Maybe$Nothing};
 var _user$project$Speakers$Speaker = F2(
 	function (a, b) {
 		return {fullName: a, profileUrl: b};
@@ -12869,6 +12868,11 @@ var _user$project$Speakers$abaumann = {
 	fullName: 'Adrien Baumann',
 	profileUrl: _elm_lang$core$Maybe$Just(
 		_user$project$Speakers$LinkedIn('https://fr.linkedin.com/in/adrien-baumann-7244694/fr'))
+};
+var _user$project$Speakers$erwan = {
+	fullName: 'Erwan Queffélec',
+	profileUrl: _elm_lang$core$Maybe$Just(
+		_user$project$Speakers$LinkedIn('https://www.linkedin.com/in/erwanqueffelec'))
 };
 var _user$project$Speakers$Twitter = function (a) {
 	return {ctor: 'Twitter', _0: a};
@@ -12903,15 +12907,26 @@ var _user$project$Speakers$tibastral = {
 	profileUrl: _elm_lang$core$Maybe$Just(
 		_user$project$Speakers$Twitter('tibastral'))
 };
+var _user$project$Speakers$sebcreme = {
+	fullName: 'Sebastien Crème',
+	profileUrl: _elm_lang$core$Maybe$Just(
+		_user$project$Speakers$Twitter('sebcreme'))
+};
+var _user$project$Speakers$nicoespeon = {
+	fullName: 'Nicolas Carlo',
+	profileUrl: _elm_lang$core$Maybe$Just(
+		_user$project$Speakers$Twitter('nicoespeon'))
+};
 var _user$project$Meetups$meetup5 = {
 	date: '2016-11-09',
 	location: 'Mozilla',
 	lineUp: _elm_lang$core$Native_List.fromArray(
 		[
-			{speaker: _user$project$Speakers$erwan, title: 'Retour d\'experience sur Elm en production', slidesUrl: _elm_lang$core$Maybe$Nothing, videoUrl: _elm_lang$core$Maybe$Nothing, description: ''},
-			{speaker: _user$project$Speakers$n_umiastowski, title: 'Debug, test unitaires et états impossibles', slidesUrl: _elm_lang$core$Maybe$Nothing, videoUrl: _elm_lang$core$Maybe$Nothing, description: ''},
+			{speaker: _user$project$Speakers$n_umiastowski, title: 'Debug, test unitaires et états impossibles', slidesUrl: _elm_lang$core$Maybe$Nothing, videoUrl: _elm_lang$core$Maybe$Nothing, description: 'Comment j\'ai commencé à faire du debug puis des tests unitaires avec elm-test, puis comment j\'ai fini par vouloir rendre impossibles les états impossibles. Un challenge qui s\'est révélé passionnant et instructif.'},
+			{speaker: _user$project$Speakers$sebcreme, title: 'Highway to Elm', slidesUrl: _elm_lang$core$Maybe$Nothing, videoUrl: _elm_lang$core$Maybe$Nothing, description: 'À Nomalab, jeune société de l\'audiovisuel, on code en elm quotidiennement.\nNotre mission : recevoir des vidéos fraîchements sorties de la post-production, les transformer dans un format prêt à diffuser, puis les livrer aux chaînes TV et plateformes de VoD - avec archivage et SLA à chaque étape.\n\nPuisqu\'il il ne faut pas concevoir les services de demain avec les technos d\'hier, on a choisi AWS, Docker, Rust et elm pour faire face à nos challenges techniques : gestion de gros fichiers, analyse et édition de vidéo sur une plateforme 100% web.\n\nÀ l\'aube de notre V1, zoom sur les raisons du choix d\'elm, les bénéfices constatés et les leçons tirées sur 6 mois d\'utilisation d’une techno très prometteuse, exemples concrets à l\'appui !'},
 			{speaker: _user$project$Speakers$tellijo, title: 'Live Coding: Horodateur pour freelance', slidesUrl: _elm_lang$core$Maybe$Nothing, videoUrl: _elm_lang$core$Maybe$Nothing, description: ''},
-			{speaker: _user$project$Speakers$tbrisbout, title: 'Live Coding: 3D et VR en elm', slidesUrl: _elm_lang$core$Maybe$Nothing, videoUrl: _elm_lang$core$Maybe$Nothing, description: ''}
+			{speaker: _user$project$Speakers$tbrisbout, title: 'Live Coding: 3D et VR en elm', slidesUrl: _elm_lang$core$Maybe$Nothing, videoUrl: _elm_lang$core$Maybe$Nothing, description: ''},
+			{speaker: _user$project$Speakers$nicoespeon, title: 'Live Coding: Paris Web Component exercise', slidesUrl: _elm_lang$core$Maybe$Nothing, videoUrl: _elm_lang$core$Maybe$Nothing, description: ''}
 		])
 };
 var _user$project$Meetups$meetup4 = {
@@ -12923,14 +12938,14 @@ var _user$project$Meetups$meetup4 = {
 			speaker: _user$project$Speakers$tbrisbout,
 			title: 'elm-css',
 			slidesUrl: _elm_lang$core$Maybe$Just('https://slides.com/thomasbrisbout/elm-css/fullscreen#/'),
-			videoUrl: _elm_lang$core$Maybe$Nothing,
+			videoUrl: _elm_lang$core$Maybe$Just('https://youtu.be/LhxT6KzbIS0?t=211'),
 			description: 'Nous verrons dans ce talk comment un système de type peut aider à faire du CSS de manière fiable: Imaginez par exemple être notifié sur une typo dans un nom de classe...'
 		},
 			{
 			speaker: _user$project$Speakers$n_umiastowski,
 			title: 'Donner et recevoir avec la communauté Elm sur Slack',
 			slidesUrl: _elm_lang$core$Maybe$Just('http://slides.com/numiastowski/deck/fullscreen'),
-			videoUrl: _elm_lang$core$Maybe$Nothing,
+			videoUrl: _elm_lang$core$Maybe$Just('https://youtu.be/LhxT6KzbIS0?t=991'),
 			description: 'Nous verrons dans ce talk comment un système de type peut aider à faire du CSS de manière fiable: Imaginez par exemple être notifié sur une typo dans un nom de classe...'
 		},
 			{
@@ -12938,9 +12953,15 @@ var _user$project$Meetups$meetup4 = {
 			title: 'Elm + Polymer = <3',
 			description: 'Après ce talk vous aurez tous les outils en main pour intégrer des composants tiers avec votre application Elm. Le cas d\'étude portera sur les interactions entre Elm et des composants Polymer.',
 			slidesUrl: _elm_lang$core$Maybe$Just('http://slides.com/kevinlebrun/elm-polymer-3/fullscreen'),
-			videoUrl: _elm_lang$core$Maybe$Nothing
+			videoUrl: _elm_lang$core$Maybe$Just('https://youtu.be/LhxT6KzbIS0?t=1668')
 		},
-			{speaker: _user$project$Speakers$tibastral, title: 'Video Game in Elm without any framework', description: 'How reactive programming will take over the world !!', slidesUrl: _elm_lang$core$Maybe$Nothing, videoUrl: _elm_lang$core$Maybe$Nothing}
+			{
+			speaker: _user$project$Speakers$tibastral,
+			title: 'Video Game in Elm without any framework',
+			description: 'How reactive programming will take over the world !!',
+			slidesUrl: _elm_lang$core$Maybe$Nothing,
+			videoUrl: _elm_lang$core$Maybe$Just('https://youtu.be/LhxT6KzbIS0?t=2783')
+		}
 		])
 };
 var _user$project$Meetups$meetup3 = {
@@ -13235,10 +13256,18 @@ var _user$project$Card$displayTalkInfo = function (_p2) {
 								_rtfeldman$elm_css$Css$textAlign(_rtfeldman$elm_css$Css$left)
 							]))
 					]),
-				_elm_lang$core$Native_List.fromArray(
-					[
-						_elm_lang$html$Html$text(_p3.description)
-					])),
+				A2(
+					_elm_lang$core$List$intersperse,
+					A2(
+						_elm_lang$html$Html$br,
+						_elm_lang$core$Native_List.fromArray(
+							[]),
+						_elm_lang$core$Native_List.fromArray(
+							[])),
+					A2(
+						_elm_lang$core$List$map,
+						_elm_lang$html$Html$text,
+						_elm_lang$core$String$lines(_p3.description)))),
 				_user$project$Card$displaySlides(_p3.slidesUrl),
 				_user$project$Card$displayVideo(_p3.videoUrl),
 				A2(

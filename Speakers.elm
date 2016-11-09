@@ -71,5 +71,19 @@ tibastral =
 erwan : Speaker
 erwan =
     { fullName = "Erwan Queffélec"
-    , profileUrl = Nothing
+    , profileUrl = Just <| LinkedIn "https://www.linkedin.com/in/erwanqueffelec"
+    }
+
+
+sebcreme : Speaker
+sebcreme =
+    { fullName = "Sebastien Crème"
+    , profileUrl = Just <| Twitter "sebcreme"
+    }
+
+
+nicoespeon : Speaker
+nicoespeon =
+    { fullName = "Nicolas Carlo"
+    , profileUrl = Just <| Twitter "nicoespeon"
     }
