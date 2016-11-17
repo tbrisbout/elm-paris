@@ -14,17 +14,22 @@ import String
 displayCard : Talk -> Html a
 displayCard talk =
     li [ cardStyles ]
-        [ displaySpeaker talk.speaker
+        [ displaySpeakers talk.speakers
         , displayTalkInfo talk
         ]
 
 
-displaySpeaker : Speaker -> Html a
-displaySpeaker { fullName, profileUrl } =
+displaySpeakers : List Speaker -> Html a
+displaySpeakers speakers =
     let
         layout =
             styles [ flex (pc 25) ]
+    in
+        div [ layout ] (List.map displaySpeaker speakers)
 
+displaySpeaker : Speaker -> Html a
+displaySpeaker { fullName, profileUrl } =
+    let
         attributes =
             [ class "speaker"
             , target "_blank"
@@ -55,7 +60,7 @@ displaySpeaker { fullName, profileUrl } =
     in
         case profileUrl of
             Just profile ->
-                span [ layout ]
+                div [ ]
                     [ displayAvatar profile
                     , br [] []
                     , text fullName
@@ -64,7 +69,7 @@ displaySpeaker { fullName, profileUrl } =
                     ]
 
             Nothing ->
-                span [ layout ]
+                div [ ]
                     [ dummyAvatar
                     , br [] []
                     , text fullName
