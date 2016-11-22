@@ -12927,7 +12927,7 @@ var _user$project$Meetups$meetup5 = {
 				[_user$project$Speakers$n_umiastowski]),
 			title: 'Debug, test unitaires et états impossibles',
 			slidesUrl: _elm_lang$core$Maybe$Nothing,
-			videoUrl: _elm_lang$core$Maybe$Nothing,
+			videoUrl: _elm_lang$core$Maybe$Just('https://www.youtube.com/watch?v=NA-jApMBKf0'),
 			description: 'Comment j\'ai commencé à faire du debug puis des tests unitaires avec elm-test, puis comment j\'ai fini par vouloir rendre impossibles les états impossibles. Un challenge qui s\'est révélé passionnant et instructif.'
 		},
 			{
@@ -12935,23 +12935,15 @@ var _user$project$Meetups$meetup5 = {
 				[_user$project$Speakers$sebcreme, _user$project$Speakers$erwan]),
 			title: 'Highway to Elm',
 			slidesUrl: _elm_lang$core$Maybe$Nothing,
-			videoUrl: _elm_lang$core$Maybe$Nothing,
+			videoUrl: _elm_lang$core$Maybe$Just('https://www.youtube.com/watch?v=_tGWuHdSKXY'),
 			description: 'À Nomalab, jeune société de l\'audiovisuel, on code en elm quotidiennement.\nNotre mission : recevoir des vidéos fraîchements sorties de la post-production, les transformer dans un format prêt à diffuser, puis les livrer aux chaînes TV et plateformes de VoD - avec archivage et SLA à chaque étape.\n\nPuisqu\'il il ne faut pas concevoir les services de demain avec les technos d\'hier, on a choisi AWS, Docker, Rust et elm pour faire face à nos challenges techniques : gestion de gros fichiers, analyse et édition de vidéo sur une plateforme 100% web.\n\nÀ l\'aube de notre V1, zoom sur les raisons du choix d\'elm, les bénéfices constatés et les leçons tirées sur 6 mois d\'utilisation d’une techno très prometteuse, exemples concrets à l\'appui !'
-		},
-			{
-			speakers: _elm_lang$core$Native_List.fromArray(
-				[_user$project$Speakers$tellijo]),
-			title: 'Live Coding: Horodateur pour freelance',
-			slidesUrl: _elm_lang$core$Maybe$Nothing,
-			videoUrl: _elm_lang$core$Maybe$Nothing,
-			description: ''
 		},
 			{
 			speakers: _elm_lang$core$Native_List.fromArray(
 				[_user$project$Speakers$tbrisbout]),
 			title: 'Live Coding: 3D et VR en elm',
 			slidesUrl: _elm_lang$core$Maybe$Nothing,
-			videoUrl: _elm_lang$core$Maybe$Nothing,
+			videoUrl: _elm_lang$core$Maybe$Just('https://www.youtube.com/watch?v=3fX1TWZ-Vi8'),
 			description: ''
 		},
 			{
@@ -12959,7 +12951,7 @@ var _user$project$Meetups$meetup5 = {
 				[_user$project$Speakers$nicoespeon]),
 			title: 'Live Coding: Paris Web Component exercise',
 			slidesUrl: _elm_lang$core$Maybe$Nothing,
-			videoUrl: _elm_lang$core$Maybe$Nothing,
+			videoUrl: _elm_lang$core$Maybe$Just('https://www.youtube.com/watch?v=uy0gV-XGuuY'),
 			description: ''
 		}
 		])
@@ -13034,7 +13026,7 @@ var _user$project$Meetups$meetup3 = {
 		},
 			{
 			speakers: _elm_lang$core$Native_List.fromArray(
-				[_user$project$Speakers$abaumann]),
+				[_user$project$Speakers$abaumann, _user$project$Speakers$alickonrails]),
 			title: 'Live coding d\'un algorithme de génération de donjon en elm',
 			description: 'Ce talk parlera de gaming avec le coding d\'un algorithme de génération procédural et aléatoire de donjon avec sa représentation graphique. ',
 			slidesUrl: _elm_lang$core$Maybe$Nothing,
@@ -13065,7 +13057,7 @@ var _user$project$Meetups$meetup2 = {
 		},
 			{
 			speakers: _elm_lang$core$Native_List.fromArray(
-				[_user$project$Speakers$abaumann]),
+				[_user$project$Speakers$abaumann, _user$project$Speakers$alickonrails]),
 			title: 'Elm et Graphisme',
 			description: 'Comment dessiner en Elm avec elm-graphics et elm-svg',
 			slidesUrl: _elm_lang$core$Maybe$Nothing,
@@ -13415,7 +13407,14 @@ var _user$project$Card$displaySpeaker = function (_p4) {
 		return A2(
 			_elm_lang$html$Html$div,
 			_elm_lang$core$Native_List.fromArray(
-				[]),
+				[
+					_user$project$Styles$styles(
+					_elm_lang$core$Native_List.fromArray(
+						[
+							_rtfeldman$elm_css$Css$marginTop(
+							_rtfeldman$elm_css$Css$px(10))
+						]))
+				]),
 			_elm_lang$core$Native_List.fromArray(
 				[
 					displayAvatar(_p9),
@@ -13432,7 +13431,13 @@ var _user$project$Card$displaySpeaker = function (_p4) {
 						[]),
 					_elm_lang$core$Native_List.fromArray(
 						[])),
-					displayLink(_p9)
+					displayLink(_p9),
+					A2(
+					_elm_lang$html$Html$br,
+					_elm_lang$core$Native_List.fromArray(
+						[]),
+					_elm_lang$core$Native_List.fromArray(
+						[]))
 				]));
 	} else {
 		return A2(
@@ -13448,7 +13453,13 @@ var _user$project$Card$displaySpeaker = function (_p4) {
 						[]),
 					_elm_lang$core$Native_List.fromArray(
 						[])),
-					_elm_lang$html$Html$text(_p10)
+					_elm_lang$html$Html$text(_p10),
+					A2(
+					_elm_lang$html$Html$br,
+					_elm_lang$core$Native_List.fromArray(
+						[]),
+					_elm_lang$core$Native_List.fromArray(
+						[]))
 				]));
 	}
 };

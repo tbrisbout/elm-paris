@@ -73,7 +73,7 @@ meetup2 =
           , slidesUrl = Nothing
           , videoUrl = Nothing
           }
-        , { speakers = [ abaumann ]
+        , { speakers = [ abaumann, alickonrails ]
           , title = "Elm et Graphisme"
           , description = "Comment dessiner en Elm avec elm-graphics et elm-svg"
           , slidesUrl = Nothing
@@ -106,7 +106,7 @@ meetup3 =
           , slidesUrl = Just "http://slides.com/kevinlebrun/from-elm016-to-elm017/fullscreen"
           , videoUrl = Just "https://youtu.be/c9E9_vSaeDo?list=PLFmYNJ_DUU2DPZH2Vfok0jdfkGPcrL0JA"
           }
-        , { speakers = [ abaumann ]
+        , { speakers = [ abaumann, alickonrails ]
           , title = "Live coding d'un algorithme de génération de donjon en elm"
           , description = "Ce talk parlera de gaming avec le coding d'un algorithme de génération procédural et aléatoire de donjon avec sa représentation graphique. "
           , slidesUrl = Nothing
@@ -157,31 +157,25 @@ meetup5 =
         [ { speakers = [ n_umiastowski ]
           , title = "Debug, test unitaires et états impossibles"
           , slidesUrl = Nothing
-          , videoUrl = Nothing
+          , videoUrl = Just "https://www.youtube.com/watch?v=NA-jApMBKf0"
           , description = "Comment j'ai commencé à faire du debug puis des tests unitaires avec elm-test, puis comment j'ai fini par vouloir rendre impossibles les états impossibles. Un challenge qui s'est révélé passionnant et instructif."
           }
         , { speakers = [ sebcreme, erwan ]
           , title = "Highway to Elm"
           , slidesUrl = Nothing
-          , videoUrl = Nothing
+          , videoUrl = Just "https://www.youtube.com/watch?v=_tGWuHdSKXY"
           , description = "À Nomalab, jeune société de l'audiovisuel, on code en elm quotidiennement.\nNotre mission : recevoir des vidéos fraîchements sorties de la post-production, les transformer dans un format prêt à diffuser, puis les livrer aux chaînes TV et plateformes de VoD - avec archivage et SLA à chaque étape.\n\nPuisqu'il il ne faut pas concevoir les services de demain avec les technos d'hier, on a choisi AWS, Docker, Rust et elm pour faire face à nos challenges techniques : gestion de gros fichiers, analyse et édition de vidéo sur une plateforme 100% web.\n\nÀ l'aube de notre V1, zoom sur les raisons du choix d'elm, les bénéfices constatés et les leçons tirées sur 6 mois d'utilisation d’une techno très prometteuse, exemples concrets à l'appui !"
-          }
-        , { speakers = [ tellijo ]
-          , title = "Live Coding: Horodateur pour freelance"
-          , slidesUrl = Nothing
-          , videoUrl = Nothing
-          , description = ""
           }
         , { speakers = [ tbrisbout ]
           , title = "Live Coding: 3D et VR en elm"
           , slidesUrl = Nothing
-          , videoUrl = Nothing
+          , videoUrl = Just "https://www.youtube.com/watch?v=3fX1TWZ-Vi8"
           , description = ""
           }
         , { speakers = [ nicoespeon ]
           , title = "Live Coding: Paris Web Component exercise"
           , slidesUrl = Nothing
-          , videoUrl = Nothing
+          , videoUrl = Just "https://www.youtube.com/watch?v=uy0gV-XGuuY"
           , description = ""
           }
         ]

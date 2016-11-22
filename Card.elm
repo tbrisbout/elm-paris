@@ -3,7 +3,7 @@ module Card exposing (displayCard)
 import Meetups exposing (Talk)
 import Html exposing (..)
 import Html.Attributes exposing (src, style, href, class, target)
-import Css exposing (flex, color, padding, px, pc, textAlign, left, fontSize, marginRight)
+import Css exposing (flex, color, padding, px, pc, textAlign, left, fontSize, marginRight, marginTop)
 import FontAwesome.Web as Icon
 import FontAwesome.Brand as Brand
 import Speakers exposing (Speaker, Profile(Twitter, LinkedIn))
@@ -26,6 +26,7 @@ displaySpeakers speakers =
             styles [ flex (pc 25) ]
     in
         div [ layout ] (List.map displaySpeaker speakers)
+
 
 displaySpeaker : Speaker -> Html a
 displaySpeaker { fullName, profileUrl } =
@@ -60,19 +61,21 @@ displaySpeaker { fullName, profileUrl } =
     in
         case profileUrl of
             Just profile ->
-                div [ ]
+                div [ styles [ marginTop (px 10) ] ]
                     [ displayAvatar profile
                     , br [] []
                     , text fullName
                     , br [] []
                     , displayLink profile
+                    , br [] []
                     ]
 
             Nothing ->
-                div [ ]
+                div []
                     [ dummyAvatar
                     , br [] []
                     , text fullName
+                    , br [] []
                     ]
 
 
