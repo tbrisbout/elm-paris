@@ -19,14 +19,14 @@ type alias Meetup =
     }
 
 
-nextMeetup : Meetup
+nextMeetup : Maybe Meetup
 nextMeetup =
-    meetup5
+    Nothing
 
 
 pastMeetups : List Meetup
 pastMeetups =
-    [ meetup1, meetup2, meetup3, meetup4 ]
+    [ meetup1, meetup2, meetup3, meetup4, meetup5 ]
 
 
 meetup1 : Meetup

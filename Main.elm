@@ -11,7 +11,7 @@ import Card exposing (displayCard)
 
 
 type alias Model =
-    { nextMeetup : Meetup
+    { nextMeetup : Maybe Meetup
     , pastMeetups : List Meetup
     }
 
@@ -42,13 +42,18 @@ update msg model =
 -- VIEW
 
 
-nextMeetupView : Meetup -> Html Msg
+nextMeetupView : Maybe Meetup -> Html Msg
 nextMeetupView meetup =
-    div []
-        [ h2 [ titleStyle ] [ text <| "nextMeetup = (\"" ++ meetup.date ++ "\", \"" ++ meetup.location ++ "\")" ]
-        , ul [ listStyles ]
-            (List.map displayCard meetup.lineUp)
-        ]
+    case meetup of
+        Just meetup ->
+            div []
+                [ h2 [ titleStyle ] [ text <| "nextMeetup = (\"" ++ meetup.date ++ "\", \"" ++ meetup.location ++ "\")" ]
+                , ul [ listStyles ]
+                    (List.map displayCard meetup.lineUp)
+                ]
+
+        Nothing ->
+            div [] []
 
 
 previousMeetupsView : List Meetup -> Html Msg
@@ -65,15 +70,15 @@ previousMeetupsView meetups =
 
 view : Model -> Html Msg
 view model =
-    div [ viewStyles ]
-        <| externalStylesheets
-        ++ [ header [ headerStyles ]
-                [ h1 [ titleStyle ] [ text "Elm Paris Meetup" ]
-                , nextMeetupView model.nextMeetup
-                ]
-           , h2 [] [ text "Previous talks" ]
-           , previousMeetupsView model.pastMeetups
-           ]
+    div [ viewStyles ] <|
+        externalStylesheets
+            ++ [ header [ headerStyles ]
+                    [ h1 [ titleStyle ] [ text "Elm Paris Meetup" ]
+                    , nextMeetupView model.nextMeetup
+                    ]
+               , h2 [] [ text "Previous talks" ]
+               , previousMeetupsView model.pastMeetups
+               ]
 
 
 
