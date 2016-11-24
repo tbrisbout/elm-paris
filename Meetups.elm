@@ -131,7 +131,7 @@ meetup4 =
           , title = "Donner et recevoir avec la communauté Elm sur Slack"
           , slidesUrl = Just "http://slides.com/numiastowski/deck/fullscreen"
           , videoUrl = Just "https://youtu.be/LhxT6KzbIS0?t=991"
-          , description = "Nous verrons dans ce talk comment un système de type peut aider à faire du CSS de manière fiable: Imaginez par exemple être notifié sur une typo dans un nom de classe..."
+          , description = "Retour d'expérience d'un débutant : la communauté Elm sur Slack est un véritable lieu d'échange qui m'a aidé pour apprendre les bases du langages, et m'a permis de me sentir moins seul pour appréhender la programmation fonctionnelle. J'ai beaucoup reçu mais j'y ai aussi appris à donner : participer à des corrections de modules, proposer des nouvelles idées. Venez, comme moi, faire vivre Elm en participant à la communauté Slack."
           }
         , { speakers = [ klebrun ]
           , title = "Elm + Polymer = <3"
