@@ -1,7 +1,6 @@
 module Main exposing (..)
 
 import Html exposing (..)
-import Html.App as App
 import Meetups exposing (Meetup, Talk, nextMeetup, pastMeetups)
 import Styles exposing (..)
 import Card exposing (displayCard)
@@ -65,24 +64,24 @@ previousMeetupsView meetups =
 
 view : Model -> Html Msg
 view model =
-    div [ viewStyles ]
-        <| externalStylesheets
-        ++ [ header [ headerStyles ]
-                [ h1 [ titleStyle ] [ text "Elm Paris Meetup" ]
-                , nextMeetupView model.nextMeetup
-                ]
-           , h2 [] [ text "Previous talks" ]
-           , previousMeetupsView model.pastMeetups
-           ]
+    div [ viewStyles ] <|
+        externalStylesheets
+            ++ [ header [ headerStyles ]
+                    [ h1 [ titleStyle ] [ text "Elm Paris Meetup" ]
+                    , nextMeetupView model.nextMeetup
+                    ]
+               , h2 [] [ text "Previous talks" ]
+               , previousMeetupsView model.pastMeetups
+               ]
 
 
 
 -- MAIN
 
 
-main : Program Never
+main : Platform.Program Never Model Msg
 main =
-    App.beginnerProgram
+    Html.beginnerProgram
         { model = initialModel
         , view = view
         , update = update
