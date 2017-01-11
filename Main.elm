@@ -1,6 +1,7 @@
 module Main exposing (..)
 
 import Html exposing (..)
+import Html.Attributes exposing (href)
 import Meetups exposing (Meetup, Talk, nextMeetup, pastMeetups)
 import Styles exposing (..)
 import Card exposing (displayCard)
@@ -44,7 +45,9 @@ update msg model =
 nextMeetupView : Meetup -> Html Msg
 nextMeetupView meetup =
     div []
-        [ h2 [ titleStyle ] [ text <| "nextMeetup = (\"" ++ meetup.date ++ "\", \"" ++ meetup.location ++ "\")" ]
+        [ h1 []
+            [ a [ titleStyle, href meetup.link ] [ text <| "nextMeetup = (\"" ++ meetup.date ++ "\", \"" ++ meetup.location ++ "\")" ]
+            ]
         , ul [ listStyles ]
             (List.map displayCard meetup.lineUp)
         ]

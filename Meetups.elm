@@ -15,24 +15,26 @@ type alias Talk =
 type alias Meetup =
     { date : String
     , location : String
+    , link : String
     , lineUp : List Talk
     }
 
 
 nextMeetup : Meetup
 nextMeetup =
-    meetup5
+    meetup6
 
 
 pastMeetups : List Meetup
 pastMeetups =
-    [ meetup1, meetup2, meetup3, meetup4 ]
+    [ meetup1, meetup2, meetup3, meetup4, meetup5 ]
 
 
 meetup1 : Meetup
 meetup1 =
     { date = "2016-03-24"
     , location = "Meetic"
+    , link = "https://www.meetup.com/fr-FR/Meetup-Elm-Paris/events/228722002/"
     , lineUp =
         [ { speakers = [ tbrisbout ]
           , title = "Elm Language and Tooling overview"
@@ -60,6 +62,7 @@ meetup2 : Meetup
 meetup2 =
     { date = "2016-05-04"
     , location = "BeMyApp"
+    , link = "https://www.meetup.com/fr-FR/Meetup-Elm-Paris/events/229812335/"
     , lineUp =
         [ { speakers = [ tbrisbout ]
           , title = "Elm sur le desktop avec Electron"
@@ -87,6 +90,7 @@ meetup3 : Meetup
 meetup3 =
     { date = "2016-06-21"
     , location = "LeBonCoin"
+    , link = "https://www.meetup.com/fr-FR/Meetup-Elm-Paris/events/230544597/"
     , lineUp =
         [ { speakers = [ tbrisbout ]
           , title = "Testing en Elm"
@@ -120,6 +124,7 @@ meetup4 : Meetup
 meetup4 =
     { date = "2016-09-16"
     , location = "JS-Republic"
+    , link = "https://www.meetup.com/fr-FR/Meetup-Elm-Paris/events/233557117/"
     , lineUp =
         [ { speakers = [ tbrisbout ]
           , title = "elm-css"
@@ -153,6 +158,7 @@ meetup5 : Meetup
 meetup5 =
     { date = "2016-11-09"
     , location = "Mozilla"
+    , link = "https://www.meetup.com/fr-FR/Meetup-Elm-Paris/events/235017960/"
     , lineUp =
         [ { speakers = [ n_umiastowski ]
           , title = "Debug, test unitaires et états impossibles"

@@ -60,6 +60,7 @@ titleStyle =
     styles
         [ marginTop (px 0)
         , paddingBottom (px 10)
+        , color headerColor
         , fontFamilies [ "Monospace", "Arial" ]
         ]
 
