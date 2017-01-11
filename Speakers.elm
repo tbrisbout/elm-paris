@@ -87,3 +87,31 @@ nicoespeon =
     { fullName = "Nicolas Carlo"
     , profileUrl = Just <| Twitter "nicoespeon"
     }
+
+
+pauldijou : Speaker
+pauldijou =
+    { fullName = "Paul Dijou"
+    , profileUrl = Just <| Twitter "paul_dijou"
+    }
+
+
+theokalumbu : Speaker
+theokalumbu =
+    { fullName = "Théophile Kalumbu"
+    , profileUrl = Just <| Twitter "kalu_theo"
+    }
+
+
+iamwarry : Speaker
+iamwarry =
+    { fullName = "Maxime Dantec"
+    , profileUrl = Just <| Twitter "iamwarry"
+    }
+
+
+engelsjeroen : Speaker
+engelsjeroen =
+    { fullName = "Jeroen Engels"
+    , profileUrl = Just <| Twitter "engelsjeroen"
+    }

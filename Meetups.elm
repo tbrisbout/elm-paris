@@ -186,3 +186,37 @@ meetup5 =
           }
         ]
     }
+
+
+meetup6 : Meetup
+meetup6 =
+    { date = "2017-01-18"
+    , location = "Zengularity"
+    , link = "http://meetu.ps/349g3M"
+    , lineUp =
+        [ { speakers = [ theokalumbu ]
+          , title = "ELM + React Storybook"
+          , slidesUrl = Nothing
+          , videoUrl = Nothing
+          , description = "Je vais parler de mes travaux sur l'implémentation de ReactStorybook dans un projet ELM.\nVoici mon repo sur le sujet:  https://github.com/kalutheo/elm-calendar-react-storybook"
+          }
+        , { speakers = [ pauldijou ]
+          , title = "Elm : comprendre le code JavaScript généré et écrire du code Elm natif"
+          , slidesUrl = Nothing
+          , videoUrl = Nothing
+          , description = "C'est pas l'aspect le plus noble du langage mais c'est nécessaire pour aller en prod (lorsqu'on se rend compte qu'il n'y a pas de driver SQL en Elm, et qu'on ne va pas en re-écrire un, et qu'on va juste encapsuler la lib Node, car oui on fait du Elm server-side)."
+          }
+        , { speakers = [ engelsjeroen ]
+          , title = "Coder un Linter Elm en Elm"
+          , slidesUrl = Nothing
+          , videoUrl = Nothing
+          , description = "Je vais parler de l'écriture d'un linter inspiré par ESLint en Elm pour Elm. J'expliquerais ce qu'est un AST, comment le linter marche, avec pas mal de comparaisons avec JavaScript et ESLint, les règles que j'ai écrites et puis si un linter est utile dans l'écosystème Elm."
+          }
+        , { speakers = [ iamwarry ]
+          , title = "Coder un simple serveur http en Elm"
+          , slidesUrl = Nothing
+          , videoUrl = Nothing
+          , description = "En 20 minutes, nous verrons comment créer une base simple pour un server http en Elm avec seulement des ports pour la communication JS."
+          }
+        ]
+    }
