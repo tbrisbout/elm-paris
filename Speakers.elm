@@ -129,3 +129,10 @@ ransheng =
     { fullName = "Sheng Ran"
     , profileUrl = Just <| LinkedIn "https://www.linkedin.com/in/ransheng/"
     }
+
+
+faatz : Speaker
+faatz =
+    { fullName = "Frederic Aatz"
+    , profileUrl = Just <| Twitter "faatz"
+    }

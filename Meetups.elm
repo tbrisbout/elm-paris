@@ -22,31 +22,25 @@ type alias Meetup =
 
 nextMeetup : Meetup
 nextMeetup =
-    { date = "Mars 2017"
-    , location = "Critéo"
-    , link = "https://www.meetup.com/fr-FR/Meetup-Elm-Paris/events/239101491/"
+    { date = "2017-06-01"
+    , location = "Microsoft"
+    , link = "https://www.meetup.com/fr-FR/Meetup-Elm-Paris/events/239902424/"
     , lineUp =
-        [ { speakers = [ n_umiastowski ]
-          , title = "elm-test en pratique"
-          , slidesUrl = Nothing
+        [ { speakers = [ nicoespeon ]
+          , title = "Une stack Elm & Elixir pour faire des tests"
+          , slidesUrl = Just "https://fr.slideshare.net/nicolascarlo1/une-stack-elm-elixir-pour-faire-des-tests"
           , videoUrl = Nothing
-          , description = "Le but étant de re-préciser que même en Elm, le TDD est une démarche utile et efficace. TDD -> Type annotation -> Fonction"
+          , description = ""
           }
-        , { speakers = [ tibastral ]
-          , title = "Inline css with elm elegant"
+        , { speakers = [ faatz ]
+          , title = "Microsoft + Open Source"
           , slidesUrl = Nothing
           , videoUrl = Nothing
           , description = ""
           }
-        , { speakers = [ vjousse ]
-          , title = "Elm et contenteditable: tout n'est pas perdu !"
-          , slidesUrl = Nothing
-          , videoUrl = Nothing
-          , description = ""
-          }
-        , { speakers = [ ransheng ]
-          , title = "Elm and React: towards a better interop"
-          , slidesUrl = Just "http://slides.com/shengran/elm-and-react"
+        , { speakers = [ tbrisbout ]
+          , title = "Introduction à elm-native-ui"
+          , slidesUrl = Just "http://slides.com/thomasbrisbout/elm-native-ui/fullscreen#/"
           , videoUrl = Nothing
           , description = ""
           }
@@ -221,6 +215,36 @@ pastMeetups =
               , slidesUrl = Nothing
               , videoUrl = Nothing
               , description = "Je vais parler de l'écriture d'un linter inspiré par ESLint en Elm pour Elm. J'expliquerais ce qu'est un AST, comment le linter marche, avec pas mal de comparaisons avec JavaScript et ESLint, les règles que j'ai écrites et puis si un linter est utile dans l'écosystème Elm."
+              }
+            ]
+      }
+    , { date = "2017-04-19"
+      , location = "Critéo"
+      , link = "https://www.meetup.com/fr-FR/Meetup-Elm-Paris/events/239101491/"
+      , lineUp =
+            [ { speakers = [ n_umiastowski ]
+              , title = "elm-test en pratique"
+              , slidesUrl = Nothing
+              , videoUrl = Nothing
+              , description = "Le but étant de re-préciser que même en Elm, le TDD est une démarche utile et efficace. TDD -> Type annotation -> Fonction"
+              }
+            , { speakers = [ tibastral ]
+              , title = "Inline css with elm elegant"
+              , slidesUrl = Nothing
+              , videoUrl = Nothing
+              , description = ""
+              }
+            , { speakers = [ vjousse ]
+              , title = "Elm et contenteditable: tout n'est pas perdu !"
+              , slidesUrl = Nothing
+              , videoUrl = Nothing
+              , description = ""
+              }
+            , { speakers = [ ransheng ]
+              , title = "Elm and React: towards a better interop"
+              , slidesUrl = Just "http://slides.com/shengran/elm-and-react"
+              , videoUrl = Nothing
+              , description = ""
               }
             ]
       }

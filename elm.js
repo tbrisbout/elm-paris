@@ -13945,6 +13945,11 @@ var _user$project$Speakers$vjousse = {
 	profileUrl: _elm_lang$core$Maybe$Just(
 		_user$project$Speakers$Twitter('vjousse'))
 };
+var _user$project$Speakers$faatz = {
+	fullName: 'Frederic Aatz',
+	profileUrl: _elm_lang$core$Maybe$Just(
+		_user$project$Speakers$Twitter('faatz'))
+};
 
 var _user$project$Meetups$pastMeetups = {
 	ctor: '::',
@@ -14314,7 +14319,72 @@ var _user$project$Meetups$pastMeetups = {
 								}
 							}
 						},
-						_1: {ctor: '[]'}
+						_1: {
+							ctor: '::',
+							_0: {
+								date: '2017-04-19',
+								location: 'Critéo',
+								link: 'https://www.meetup.com/fr-FR/Meetup-Elm-Paris/events/239101491/',
+								lineUp: {
+									ctor: '::',
+									_0: {
+										speakers: {
+											ctor: '::',
+											_0: _user$project$Speakers$n_umiastowski,
+											_1: {ctor: '[]'}
+										},
+										title: 'elm-test en pratique',
+										slidesUrl: _elm_lang$core$Maybe$Nothing,
+										videoUrl: _elm_lang$core$Maybe$Nothing,
+										description: 'Le but étant de re-préciser que même en Elm, le TDD est une démarche utile et efficace. TDD -> Type annotation -> Fonction'
+									},
+									_1: {
+										ctor: '::',
+										_0: {
+											speakers: {
+												ctor: '::',
+												_0: _user$project$Speakers$tibastral,
+												_1: {ctor: '[]'}
+											},
+											title: 'Inline css with elm elegant',
+											slidesUrl: _elm_lang$core$Maybe$Nothing,
+											videoUrl: _elm_lang$core$Maybe$Nothing,
+											description: ''
+										},
+										_1: {
+											ctor: '::',
+											_0: {
+												speakers: {
+													ctor: '::',
+													_0: _user$project$Speakers$vjousse,
+													_1: {ctor: '[]'}
+												},
+												title: 'Elm et contenteditable: tout n\'est pas perdu !',
+												slidesUrl: _elm_lang$core$Maybe$Nothing,
+												videoUrl: _elm_lang$core$Maybe$Nothing,
+												description: ''
+											},
+											_1: {
+												ctor: '::',
+												_0: {
+													speakers: {
+														ctor: '::',
+														_0: _user$project$Speakers$ransheng,
+														_1: {ctor: '[]'}
+													},
+													title: 'Elm and React: towards a better interop',
+													slidesUrl: _elm_lang$core$Maybe$Just('http://slides.com/shengran/elm-and-react'),
+													videoUrl: _elm_lang$core$Maybe$Nothing,
+													description: ''
+												},
+												_1: {ctor: '[]'}
+											}
+										}
+									}
+								}
+							},
+							_1: {ctor: '[]'}
+						}
 					}
 				}
 			}
@@ -14322,31 +14392,31 @@ var _user$project$Meetups$pastMeetups = {
 	}
 };
 var _user$project$Meetups$nextMeetup = {
-	date: 'Mars 2017',
-	location: 'Critéo',
-	link: 'https://www.meetup.com/fr-FR/Meetup-Elm-Paris/events/239101491/',
+	date: '2017-06-01',
+	location: 'Microsoft',
+	link: 'https://www.meetup.com/fr-FR/Meetup-Elm-Paris/events/239902424/',
 	lineUp: {
 		ctor: '::',
 		_0: {
 			speakers: {
 				ctor: '::',
-				_0: _user$project$Speakers$n_umiastowski,
+				_0: _user$project$Speakers$nicoespeon,
 				_1: {ctor: '[]'}
 			},
-			title: 'elm-test en pratique',
-			slidesUrl: _elm_lang$core$Maybe$Nothing,
+			title: 'Une stack Elm & Elixir pour faire des tests',
+			slidesUrl: _elm_lang$core$Maybe$Just('https://fr.slideshare.net/nicolascarlo1/une-stack-elm-elixir-pour-faire-des-tests'),
 			videoUrl: _elm_lang$core$Maybe$Nothing,
-			description: 'Le but étant de re-préciser que même en Elm, le TDD est une démarche utile et efficace. TDD -> Type annotation -> Fonction'
+			description: ''
 		},
 		_1: {
 			ctor: '::',
 			_0: {
 				speakers: {
 					ctor: '::',
-					_0: _user$project$Speakers$tibastral,
+					_0: _user$project$Speakers$faatz,
 					_1: {ctor: '[]'}
 				},
-				title: 'Inline css with elm elegant',
+				title: 'Microsoft + Open Source',
 				slidesUrl: _elm_lang$core$Maybe$Nothing,
 				videoUrl: _elm_lang$core$Maybe$Nothing,
 				description: ''
@@ -14356,29 +14426,15 @@ var _user$project$Meetups$nextMeetup = {
 				_0: {
 					speakers: {
 						ctor: '::',
-						_0: _user$project$Speakers$vjousse,
+						_0: _user$project$Speakers$tbrisbout,
 						_1: {ctor: '[]'}
 					},
-					title: 'Elm et contenteditable: tout n\'est pas perdu !',
-					slidesUrl: _elm_lang$core$Maybe$Nothing,
+					title: 'Introduction à elm-native-ui',
+					slidesUrl: _elm_lang$core$Maybe$Just('http://slides.com/thomasbrisbout/elm-native-ui/fullscreen#/'),
 					videoUrl: _elm_lang$core$Maybe$Nothing,
 					description: ''
 				},
-				_1: {
-					ctor: '::',
-					_0: {
-						speakers: {
-							ctor: '::',
-							_0: _user$project$Speakers$ransheng,
-							_1: {ctor: '[]'}
-						},
-						title: 'Elm and React: towards a better interop',
-						slidesUrl: _elm_lang$core$Maybe$Just('http://slides.com/shengran/elm-and-react'),
-						videoUrl: _elm_lang$core$Maybe$Nothing,
-						description: ''
-					},
-					_1: {ctor: '[]'}
-				}
+				_1: {ctor: '[]'}
 			}
 		}
 	}
