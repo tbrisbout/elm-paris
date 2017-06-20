@@ -115,3 +115,17 @@ engelsjeroen =
     { fullName = "Jeroen Engels"
     , profileUrl = Just <| Twitter "engelsjeroen"
     }
+
+
+vjousse : Speaker
+vjousse =
+    { fullName = "Vincent Jousse"
+    , profileUrl = Just <| Twitter "vjousse"
+    }
+
+
+ransheng : Speaker
+ransheng =
+    { fullName = "Sheng Ran"
+    , profileUrl = Just <| LinkedIn "https://www.linkedin.com/in/ransheng/"
+    }
